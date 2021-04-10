@@ -1,9 +1,11 @@
-****************** London Ticket Automation  *********************
+****************** Trello Automation  *********************
 
 # Pre requisites
 -----------------------
-1. Ensure that Python 3.7.5 is installed on the Host machine.
-2. Install requirements.txt file using pip3 install -r requirements.txt
+1. Ensure that Python 3.6.9 is installed on the Host machine.
+2. Install requirements.txt file using pip3 install -r requirements.txt.
+3. This test automation framework currently supports only chrome browser at this moment,enusre the cross check your chrom browser version
+   and update the chromedriver.exe under trello_auto\tools.
 
 # Executing test cases
 -----------------------
