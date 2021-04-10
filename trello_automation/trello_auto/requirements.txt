@@ -1,0 +1,7 @@
+# Basic requirement python packages for running london ticket auto framework.
+pytest==5.3.2
+selenium==3.141.0
+configparser==4.0.2
+pytest-html==2.0.1
+pylint==2.4.4
+
