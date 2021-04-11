@@ -1,8 +1,8 @@
 """
 @ Description : This is the library created for dealing with the page objects.
 @ Author : Sam Mathew
-@ Created on : 25/12/2019
-@ Last Modified on : 28/12/2019
+@ Created on : 10/04/2021
+@ Last Modified on : 11/04/2021
 """
 # Global python imports
 import os
@@ -10,14 +10,14 @@ import os
 # Local python imports
 from trello_auto.core.webelements_wrapper import *
 from trello_auto.core.environment import Environment as EV
-from trello_auto.config.config_parser import LondonTicketConfigParser
+from trello_auto.config.config_parser import TrelloConfigParser
 from trello_auto.core.log import Log
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
 # Local python imports
 
-ui_parser = LondonTicketConfigParser(EV.UI_PARSER_PATH)
+ui_parser = TrelloConfigParser(EV.UI_PARSER_PATH)
 
 
 class BaseDriverInit(object):
@@ -37,7 +37,6 @@ class BaseDriverInit(object):
             options.add_argument("test-type")
             options.add_argument('start-maximized')
             options.add_argument("--disable-extensions")
-
             options.add_argument("--js-flags=--expose-gc")
             options.add_argument("--enable-precise-memory-info")
             options.add_argument("--disable-popup-blocking")

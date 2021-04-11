@@ -6,7 +6,7 @@ import configparser as Cp
 import sys
 
 
-class LondonTicketConfigParser:
+class TrelloConfigParser:
     """
     Contains method to parse config file
     """

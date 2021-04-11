@@ -1,9 +1,8 @@
 """
-@ Description : This py file acts as a configurable file for all the
-operations in this framework.
+@ Description : This is a parser file for the csv data set using as part of this project..
 @ Author : Sam Mathew
-@ Created on : 25/12/2019
-@ Modified on : 28/12/2019
+@ Created on : 10/04/2021
+@ Modified on : 11/04/2021
 
 """
 
@@ -31,9 +30,6 @@ class CsvParser:
             # extracting each data row one by one
             for row in csvreader:
                 self.rows.append(row)
-
-        # printing the field names
-        # print('Field names are:' + ', '.join(field for field in fields))
 
         for row in self.rows[:int(csvreader.line_num) - 1]:
             self.final_data_set.append(row[0])

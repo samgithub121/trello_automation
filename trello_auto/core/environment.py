@@ -2,8 +2,8 @@
 @ Description : This py file acts as a configurable file for all the
 operations in this framework.
 @ Author : Sam Mathew
-@ Created on : 25/12/2019
-@ Modified on : 28/12/2019
+@ Created on : 10/04/2021
+@ Modified on : 11/04/2021
 
 """
 # Global python import

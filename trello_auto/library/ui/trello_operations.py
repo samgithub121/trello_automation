@@ -10,13 +10,13 @@ from time import sleep
 
 # Local python imports
 from trello_auto.core.base_driver_init import BaseDriverInit, ActionChains, EC
-from trello_auto.config.config_parser import LondonTicketConfigParser
+from trello_auto.config.config_parser import TrelloConfigParser
 from trello_auto.core.environment import Environment as EV
 from trello_auto.core.log import Log
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-ui_parser = LondonTicketConfigParser(EV.UI_PARSER_PATH)
+ui_parser = TrelloConfigParser(EV.UI_PARSER_PATH)
 
 
 class BaseParent(object):
@@ -114,7 +114,6 @@ class TrelloOperations(BaseParent):
             if self.base.check_element_visibility(timeout=20, locator="XPATH", element=ui_parser.get("Ui Elements", "card_type_area")):
                 self.get_driver().find_element_by_xpath(ui_parser.get("Ui Elements", "card_type_area")). \
                     send_keys(card_data)
-                    # send_keys(ui_parser.get("Ui Elements", "card_data_to_pass"))
             sleep(5)
             if self.base.check_element_visibility(timeout=20, locator="XPATH", element=ui_parser.get("Ui Elements", "btn_add_card")):
                 submit_btn = self.get_driver().find_element_by_xpath(ui_parser.get("Ui Elements", "btn_add_card"))

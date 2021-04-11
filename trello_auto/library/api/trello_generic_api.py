@@ -9,11 +9,11 @@
 import requests
 
 # Local python imports
-from trello_auto.config.config_parser import LondonTicketConfigParser
+from trello_auto.config.config_parser import TrelloConfigParser
 from trello_auto.core.environment import Environment as EV
 from trello_auto.core.log import Log
 
-ui_parser = LondonTicketConfigParser(EV.UI_PARSER_PATH)
+ui_parser = TrelloConfigParser(EV.UI_PARSER_PATH)
 
 
 class TrelloGenericApis():
@@ -25,19 +25,19 @@ class TrelloGenericApis():
         self.Log = Log
         self.card_url = "https://api.trello.com/1/cards"
         self.board_url = "https://api.trello.com/1/boards/"
-        self.key = "9ea9ebd8fb05a193390ade85469ba131"
-        self.token = "de4a6ac77e30ad11cf1cc9f53b12c3e46b7f051becba755daf48d64a46617253"
-        self.idlist = "606bfbe9ea632d8648ee4a9b"
         self.desc = "This is a sample test card created"
 
     def get_idlist(self, board_name):
-
-        trellousername = "testbonitoautomation@gmail.com"
-        key = "9ea9ebd8fb05a193390ade85469ba131"
-        token = "de4a6ac77e30ad11cf1cc9f53b12c3e46b7f051becba755daf48d64a46617253"
+        """ This api is for retrieving the idlist via REST APi.
+        Parameters: board_name
+        Returns:
+            int : idlist if successfully retirved else none.
+        """
 
         # api-endpoint
-        URL = "https://api.trello.com/1/members/{0}/boards?key={1}&token={2}".format(trellousername, key, token)
+        URL = "https://api.trello.com/1/members/{0}/boards?key={1}&token={2}".\
+            format(ui_parser.get("credentials", "user_name"), ui_parser.get("credentials", "key"),
+                   ui_parser.get("credentials", "token"))
 
         test_name = board_name
         r = requests.get(url=URL)
@@ -49,7 +49,9 @@ class TrelloGenericApis():
             if data[i]['name'] == test_name:
                 id_ = data[i]['id']
 
-        URL2 = "https://api.trello.com/1/boards/{0}/lists?key={1}&token={2}".format(id_, key, token)
+        URL2 = "https://api.trello.com/1/boards/{0}/lists?key={1}&token={2}".format(id_,
+                   ui_parser.get("credentials", "key"),
+                   ui_parser.get("credentials", "token"))
         r = requests.get(url=URL2)
 
         # extracting data in json format
@@ -60,10 +62,15 @@ class TrelloGenericApis():
         return id_
 
     def create_card(self, card_data, board_name):
+        """ This api is for creating a card on a board.
+        Parameters: card_data, board_name
+        Returns:
+            bool : true if create card is success else false.
+        """
         self.Log.debug("Start creating the card")
         query = {
-            'key': self.key,
-            'token': self.token,
+            'key':  ui_parser.get("credentials", "key"),
+            'token':  ui_parser.get("credentials", "token"),
             'idList': self.get_idlist(board_name),
             'name': card_data,
             'desc': self.desc
@@ -81,10 +88,15 @@ class TrelloGenericApis():
             return False
 
     def create_board(self, board_name):
+        """ This api is for creating a new board.
+         Parameters: board_name
+         Returns:
+            bool : true if create board is success else false.
+        """
         self.Log.debug("Start creating a board")
         query = {
-            'key': self.key,
-            'token': self.token,
+            'key':  ui_parser.get("credentials", "key"),
+            'token':  ui_parser.get("credentials", "token"),
             'name': board_name
         }
 
