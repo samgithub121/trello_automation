@@ -22,16 +22,19 @@ At the end of the execution the results will be available in HTML format under t
 Command to run :-
          -> Navigate to trello_auto folder on command prompt.
          
-UI Based automation,, under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card  :-    
+UI Based automation,, under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card  :-  
+
           pytest test_suite\ui\test001_create_trello_card.py --html=reports\results.html
           
-Headless Execution : In the uiconfig.ini make exec_mode=headless and under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card 
+Headless Execution : In the uiconfig.ini make exec_mode=headless and under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card:-  
           pytest test_suite\ui\test001_create_trello_card.py --html=reports\results.html
           
 REST API execution for creating board, under the test case(test002_create_trello_board.py) mention the name of the board you wish to create:-
+
           pytest test_suite\api\test002_create_trello_board.py --html=reports\results.html
           
 REST API execution for creating card, under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card :-
+
           pytest test_suite\api\test001_create_trello_card.py --html=reports\results.html		  
 
 
@@ -46,5 +49,19 @@ REST API execution for creating card, under the test case(test001_create_trello_
 7. Screenshot capture for failed scenarios.
 8. Applitools integration for any image based comparisons.
 9. Integration of tools such as NightwatchJS, mochajs , supertest etc.
+
+# Real time console pytest logging
+-------------------------------
+![image](https://user-images.githubusercontent.com/40270316/114312555-9f571b00-9b10-11eb-82bc-ae0eac16816a.png)
+
+# PyHTML result generation
+-------------------------------
+
+![image](https://user-images.githubusercontent.com/40270316/114312606-d1687d00-9b10-11eb-933e-3a8a8c1aceb9.png)
+
+
+# Event Logging
+-------------------------------
+![image](https://user-images.githubusercontent.com/40270316/114312646-f2c96900-9b10-11eb-9aec-b99e01c12206.png)
 
 
