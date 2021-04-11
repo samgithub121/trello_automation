@@ -22,18 +22,19 @@ At the end of the execution the results will be available in HTML format under t
 Command to run :-
          -> Navigate to trello_auto folder on command prompt.
          
-UI Based automation,, under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card  :-  
+UI Based automation,, under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card 
 
           pytest test_suite\ui\test001_create_trello_card.py --html=reports\results.html
           
-Headless Execution : In the uiconfig.ini make exec_mode=headless and under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card:-  
+Headless Execution : In the uiconfig.ini make exec_mode=headless and under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card
+
           pytest test_suite\ui\test001_create_trello_card.py --html=reports\results.html
           
-REST API execution for creating board, under the test case(test002_create_trello_board.py) mention the name of the board you wish to create:-
+REST API execution for creating board, under the test case(test002_create_trello_board.py) mention the name of the board you wish to create
 
           pytest test_suite\api\test002_create_trello_board.py --html=reports\results.html
           
-REST API execution for creating card, under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card :-
+REST API execution for creating card, under the test case(test001_create_trello_card.py) mention the name of the board you wish to create card 
 
           pytest test_suite\api\test001_create_trello_card.py --html=reports\results.html		  
 
