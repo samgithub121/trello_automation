@@ -4,4 +4,4 @@ selenium==3.141.0
 configparser==4.0.2
 pytest-html==2.0.1
 pylint==2.4.4
-
+requests==2.23.0
