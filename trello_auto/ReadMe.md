@@ -10,6 +10,7 @@ create the data set for the cards.
 2. Install requirements.txt file using pip3 install -r requirements.txt.
 3. This test automation framework currently supports only chrome browser at this moment,enusre the cross check your chrome browser version
    and update the chromedriver.exe under trello_auto\tools.
+4. Update the uiconfig.ini with the credentials details shared seperately.
 
 # Executing test cases
 -----------------------
